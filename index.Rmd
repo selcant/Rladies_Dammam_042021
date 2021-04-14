@@ -54,7 +54,7 @@ xaringanExtra::embed_xaringan(url = "slides/index.html", ratio = "16:9")
 
 ## Prework
 
-I assume that you have heard of [R Markdown](https://rmarkdown.rstudio.com/) and maybe gave knitting a try. If not, no worries you will get to try it now! This will be a very hands-on session where together we will:
+I assume that you have heard of [R Markdown](https://rmarkdown.rstudio.com/) and maybe gave knitting a try. If not, no worries you will get to try with us! This will be a very hands-on session where together we will:
 
 + Knit an Rmarkdown file to html. Make it prettier!
 
