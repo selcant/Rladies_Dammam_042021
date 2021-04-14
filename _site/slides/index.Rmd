@@ -133,15 +133,15 @@ class: inverse, middle, center
 
 --
 
-Make your work reproducible and reusable. (`r emo::ji("recycle")`)
+`r emo::ji("recycle")` Make your work reproducible and reusable. 
 
 --
 
-Get confident about your work. (`r emo::ji("sunglasses")`)
+`r emo::ji("sunglasses")` Get confident about your work. 
 
 --
 
-Easily share data, results and code. All together! (`r emo::ji("globe")`)
+`r emo::ji("globe")` Easily share data, results and code. All together! 
 
 ???
 
