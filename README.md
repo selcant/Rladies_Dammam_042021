@@ -9,7 +9,8 @@
 
 by Selcan Aydin
 
-Here is the meetup link https://www.meetup.com/rladies-dammam/events/277394961/
+Here is the website link: https://many-faces.netlify.app/
+Here is the meetup link: https://www.meetup.com/rladies-dammam/events/277394961/
 
 ## Details
 We are super excited to introduce to you a new series, "The R Markdown Bible: Everything you need to know to master R Markdown". The amazing Selcan Aydin will present the first session in this series.
