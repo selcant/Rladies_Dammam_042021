@@ -47,7 +47,7 @@ You can download the .Rmd files needed for hands-on exercises here: <https://git
 xaringanExtra::use_share_again()
 ```
 
-```{r embed-xaringan, echo=FALSE, fig.cap="[Slides](slides/index.html)"}
+```{r embed-xaringan, echo=FALSE, fig.cap="[Slides](slides/index.html)", eval=FALSE}
 xaringanExtra::embed_xaringan(url = "slides/index.html", ratio = "16:9")
 ```
 \
