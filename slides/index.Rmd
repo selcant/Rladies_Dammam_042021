@@ -166,7 +166,7 @@ background-image: url(images/rmarkdown_hedgehog.png)
 background-size: 25%
 background-position: 95% 95%
 
-# Let's knit an .Rmd to html!
+# Lets knit an .Rmd to html!
 
 
 ---
@@ -176,7 +176,7 @@ background-image: url(images/rmarkdown_hedgehog.png)
 background-size: 25%
 background-position: 95% 95%
 
-# Let's watch someone else knit first!
+# Lets watch someone else knit first!
 
 ---
 
