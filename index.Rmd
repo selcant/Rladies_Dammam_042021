@@ -26,7 +26,7 @@ meta() %>%
     description = "Introducing Rmarkdown",
     generator = "xaringan and remark.js"
   ) %>% 
-  meta_name("github-repo" = "selcant/Rladies-Dammam-042021") %>% 
+  meta_name("github-repo" = "selcant/Rladies_Dammam_042021") %>% 
   meta_social(
     title = "Many faces of Rmarkdown",
     url = "",
@@ -40,6 +40,8 @@ meta() %>%
 ## Welcome  
 
 This website contains the materials for an invited talk for R-ladies Dammam by Dr. Selcan Aydin. 
+
+You can download the .Rmd files needed for hands-on exercises here: <https://github.com/selcant/Rladies_Dammam_042021/tree/main/docs>
 
 ```{r share-again, echo=FALSE}
 xaringanExtra::use_share_again()
@@ -71,7 +73,6 @@ install.packages(c("tidyverse","DT", "palmerpenguins"))
 + Link to this website: <https://many-faces.netlify.app/>
 
 + [Slides](slides/index.html)
-
 
 
 ## Acknowledgments {.appendix}
