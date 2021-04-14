@@ -80,7 +80,7 @@ background-image: url(images/rmarkdown_hedgehog_wide.png)
 background-size: contain
 background-position: bottom, center
 
-# R Markdown let's you make
+# R Markdown lets you make
 
 .footnote[Art by [Allison Horst](https://twitter.com/allison_horst?lang=en)]
 ---
@@ -166,7 +166,7 @@ background-image: url(images/rmarkdown_hedgehog.png)
 background-size: 25%
 background-position: 95% 95%
 
-# Lets knit an .Rmd to html!
+# Let's knit an .Rmd to html!
 
 
 ---
@@ -176,7 +176,7 @@ background-image: url(images/rmarkdown_hedgehog.png)
 background-size: 25%
 background-position: 95% 95%
 
-# Lets watch someone else knit first!
+# Let's watch someone else knit first!
 
 ---
 
