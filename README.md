@@ -9,7 +9,8 @@
 
 by Selcan Aydin
 
-Here is the website link: https://many-faces.netlify.app/
+Here is the website link: https://many-faces.netlify.app/   
+
 Here is the meetup link: https://www.meetup.com/rladies-dammam/events/277394961/
 
 ## Details
