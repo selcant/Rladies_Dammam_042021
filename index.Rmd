@@ -1,0 +1,80 @@
+---
+title: "Many faces of Rmarkdown"
+author:
+- name: Selcan Aydin, Ph.D.
+  url: https://selcan-aydin.netlify.app/
+  affiliation: The Jackson Laboratory
+  affiliation_url: https://www.jax.org/
+date: "`r Sys.Date()`"
+description: |
+  Invited talk @ R-ladies Dammam
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+
+```{r meta, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_general(
+    description = "Introducing Rmarkdown",
+    generator = "xaringan and remark.js"
+  ) %>% 
+  meta_name("github-repo" = "selcant/Rladies-Dammam-042021") %>% 
+  meta_social(
+    title = "Many faces of Rmarkdown",
+    url = "",
+    image = "https://repository-images.githubusercontent.com/288797104/d13f1700-e2cc-11ea-9ed7-0bf3a41af1e4",
+    image_alt = "R Markdown hedgehog by Allison Horst",
+    og_type = "website",
+    twitter_card_type = "summary_large_image"
+  )
+```
+
+## Welcome  
+
+These are the materials for an invited talk for R-ladies Dammam by Dr. Selcan Aydin. 
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r embed-xaringan, echo=FALSE, fig.cap="[Slides](slides/index.html)"}
+xaringanExtra::embed_xaringan(url = "slides/index.html", ratio = "16:9")
+```
+\
+
+## Introduction
+
+I assume that you have heard of [R Markdown](https://rmarkdown.rstudio.com/) and maybe gave knitting a try. If not, no worries you will get to try it now! This will be a very hands-on session where together we will:
+
++ Knit an Rmarkdown file to html. Make it prettier!
+
++ Build a website using Rmarkdown. Share it with the world?
+
+Please make sure you have installed the packages below:
+
+```{r eval=FALSE, echo=TRUE}
+install.packages(c("DT", "palmerpenguins"))
+```
+
+\
+
+## Links
+
++ Link to this website: 
+
++ [Slides](slides/index.html)
+
+
+
+## Acknowledgments {.appendix}
+
+This website is made with the [distill package](https://rstudio.github.io/distill/) and a custom theme by Alison Hill & [Desirée De Leon](https://desiree.rbind.io/).
+

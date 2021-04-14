@@ -1,0 +1,334 @@
+---
+title: "Many faces of R Markdown: An introduction"
+author: Dr. Selcan Aydin
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "assets/css/my-theme.css", "assets/css/my-fonts.css"]
+    seal: false 
+    lib_dir: libs
+    nature:
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(collapse = TRUE,
+                      fig.retina = 3)
+
+library(ymlthis)
+library(tidyverse)
+library(xaringanExtra)
+library(palmerpenguins)
+xaringanExtra::use_panelset()
+xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter", "linkedin", "pocket")
+)
+ggplot2::theme_set(ggplot2::theme_minimal())
+
+```
+
+```{r broadcast, echo=FALSE}
+xaringanExtra::use_broadcast()
+```
+
+class: title-slide, left, top
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$author`
+
+
+???
+
+Welcome! I want to thank Batool and R-ladies Dammam for organizing this series and for inviting me.
+
+Today we'll talk about Rmarkdown and its uses. 
+
+---
+name: hello
+class: middle, center
+
+
+## Selcan Aydin, PhD
+
+<img style="border-radius: 50%;" src="images/avatar.jpg" width="200px"/>
+
+[`r icons::fontawesome("github")` @selcant](https://github.com/selcant)  
+[`r icons::fontawesome("twitter")` @selcan_t](https://twitter.com/selcan_t)  
+[`r icons::fontawesome("link")` selcan-aydin.netlify.app/](https://selcan-aydin.netlify.app/)
+
+
+???
+
+My name is Selcan Aydin, and I'm a computational biologist. I really like teaching and talking about science. Got certified as a Software Carpentry and Rstudio instructor so I got to do it more! 
+
+
+---
+class: top, center
+background-image: url(images/rmarkdown_hedgehog_wide.png)
+background-size: contain
+background-position: bottom, center
+
+# R Markdown let's you make
+
+---
+
+class: inverse, middle, center
+
+# But, **what** is R Markdown?
+
+---
+
+background-image: url(images/rmarkdown_hedgehog.png)
+background-size: 25%
+background-position: 95% 90%
+
+# R Markdown is ...
+
+--
+
+1. ["An authoring framework for data science."](https://rmarkdown.rstudio.com/lesson-1.html) (`r emo::ji("heavy_check_mark")`)
+
+--
+
+1. [A document format (`.Rmd`).](https://bookdown.org/yihui/rmarkdown/) (`r emo::ji("heavy_check_mark")`)
+
+--
+
+1. [An R package named `rmarkdown`.](https://rmarkdown.rstudio.com/docs/) (`r emo::ji("heavy_check_mark")`)
+
+--
+
+1. ["A file format for making dynamic documents with R."](https://rmarkdown.rstudio.com/articles_intro.html) (`r emo::ji("heavy_check_mark")`)
+
+--
+
+1. ["A tool for integrating text, code, and results."](https://r4ds.had.co.nz/communicate-intro.html) (`r emo::ji("heavy_check_mark")`)
+
+--
+
+1. ["A computational document."](http://radar.oreilly.com/2011/07/wolframs-computational-documen.html) (`r emo::ji("heavy_check_mark")`)
+
+--
+
+1. Wizardry. (`r emo::ji("wizard")`)
+
+
+---
+class: inverse, middle, center
+
+# Why use R Markdown?
+
+--
+
+Make your work reproducible and reusable. (`r emo::ji("recycle")`)
+
+--
+
+Get confident about your work. (`r emo::ji("sunglasses")`)
+
+--
+
+Easily share data, results and code together. (`r emo::ji("globe")`)
+
+???
+
+These are clearly not all advantages. But the ones I benefit the most.
+
+---
+class: center, top
+background-image: url(images/rmarkdown_wizards.png)
+background-size: contain
+
+
+.footnote[Art by [Allison Horst](https://twitter.com/allison_horst?lang=en)]
+
+???
+
+What is IN Rmarkdown. 
+
+---
+
+class: inverse, center, middle
+background-image: url(images/rmarkdown_hedgehog.png)
+background-size: 25%
+background-position: 95% 90%
+
+# Let's knit an .Rmd to html!
+
+
+---
+
+class: inverse, center, middle
+background-image: url(images/rmarkdown_hedgehog.png)
+background-size: 25%
+background-position: 95% 90%
+
+# Let's watch someone else knit first!
+
+---
+
+class: inverse, top, center
+
+<video width="1530" height="610" controls>
+    <source src="images/single-doc-knit.mp4" type="video/mp4"> </video>
+
+
+---
+
+class: top, left
+
+.pull-left[
+
+# metadata: YAML 
+
+**Y(et) A(nother) M(arkup) L(anguage)**
+
+
+```{r echo = FALSE}
+yml_empty() %>% 
+ yml_author("Your name here") %>% 
+  yml_title("Your title here") %>% 
+  yml_output(html_document()) %>% 
+  asis_yaml_output()
+```
+
+```{r echo = FALSE, include = FALSE}
+yml_empty() %>% 
+  yml_author("Your name here") %>% 
+  yml_title("Your title here") %>% 
+  yml_output(html_document(toc = TRUE,
+                           toc_float = TRUE,
+                           theme = "darkly",
+                           code_folding = "hide")) %>% 
+  asis_yaml_output()
+```
+]
+
+.pull-right[
+
+
+![](images/orchestra.jpg)   
+
+
+]
+
+???
+Update your Rmd with your name + title.
+
+---
+class: top, left
+
+.pull-left[
+
+# Make it pretty! 
+
+```{r echo = FALSE}
+yml_empty() %>% 
+ yml_author("Your name here") %>% 
+  yml_title("Your title here") %>% 
+  yml_output(html_document()) %>% 
+  asis_yaml_output()
+```
+
+```{r echo = FALSE, include = TRUE}
+yml_empty() %>% 
+  yml_author("Your name here") %>% 
+  yml_title("Your title here") %>% 
+  yml_output(html_document(toc = TRUE,
+                           toc_float = TRUE,
+                           theme = "darkly",
+                           code_folding = "hide")) %>% 
+  asis_yaml_output()
+```
+
+]
+
+.pull-right[
+
+
+![](images/orchestra.jpg) 
+
+]
+
+???
+Update your Rmd and re-knit!
+
+---
+
+# `r emo::ji("yarn")` Knit to ...
+
+.pull-left[
+
+![](images/knit-dropdown.png) 
+
+]
+
+.pull-right[
+
+```{r echo=FALSE}
+yml_empty() %>% 
+  yml_author("Your name here") %>% 
+  yml_title("Your title here") %>% 
+  yml_output(html_document(toc = TRUE, toc_float = TRUE, theme = "flatly"), 
+             word_document(), 
+             pdf_document()
+             )  %>% 
+  asis_yaml_output()
+```
+]
+
+???
+
+This is a great way to "control" your knit button!
+
+Notice that when you knit, it respects those output options in your YAML.
+
+This way you "save" your output options
+
+
+---
+
+class: inverse, middle, center
+
+# code chunks
+
+???
+Add more here! 
+
+---
+
+class: inverse, middle, center
+# R Markdown website
+
+???
+
+add more here!
+---
+
+# Resources and references
+
+**add text and link here**
+
+
+---
+class: center, middle
+
+# Thank you!
+
+Special thanks to Rstudio Education, Dr. Alison Presmanes Hill and Dr. Allison Horst for making all of their teaching/talk materials available. I benefited from them greatly! 
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).

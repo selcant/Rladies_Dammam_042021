@@ -1,0 +1,19 @@
+name: "Rladies-Dammam-042021"
+title: "Many faces of R Markdown: An introduction"
+description: |
+  Invited talk with R-ladies Dammam
+output_dir: "_site"
+include: ["slides/"]
+creative_commons: CC BY-SA
+repository_url: https://github.com/selcant/Rladies_Dammam_042021
+navbar:
+  logo:
+    image: images/logo.png
+    href: 
+  right:
+    - icon: fab fa-github
+      href: https://github.com/selcant/Rladies_Dammam_042021
+output: 
+  distill::distill_article:
+    toc: true
+    css: styles.css
