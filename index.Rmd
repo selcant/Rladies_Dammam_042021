@@ -41,7 +41,8 @@ meta() %>%
 
 This website contains the materials for an invited talk for R-ladies Dammam by Dr. Selcan Aydin. 
 
-You can download the .Rmd files needed for hands-on exercises here: <https://github.com/selcant/Rladies_Dammam_042021/tree/main/docs>
+You can download the .Rmd files needed for hands-on exercises here: <https://github.com/selcant/Rladies_Dammam_042021/blob/main/docs.zip>
+<https://github.com/selcant/Rladies_Dammam_042021/blob/main/website_ex.zip>
 
 ```{r share-again, echo=FALSE}
 xaringanExtra::use_share_again()
