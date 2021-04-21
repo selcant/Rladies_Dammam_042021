@@ -4,7 +4,7 @@
     <title>Many faces of R Markdown: An introduction</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Selcan Aydin" />
-    <meta name="date" content="2021-04-14" />
+    <meta name="date" content="2021-04-21" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
@@ -65,8 +65,8 @@ My name is Selcan Aydin, and I'm a computational biologist. I really like teachi
 ---
 class: top, center
 background-image: url(images/rmarkdown_hedgehog_wide.png)
-background-size: contain
-background-position: bottom, center
+background-size: center
+background-position: middle, center
 
 # R Markdown lets you make
 
@@ -139,6 +139,7 @@ These are clearly not all advantages. But the ones I benefit the most.
 class: center, top
 background-image: url(images/rmarkdown_wizards.png)
 background-size: contain
+backgroun-position: top, center
 
 
 .footnote[Art by [Allison Horst](https://twitter.com/allison_horst?lang=en)]
@@ -287,10 +288,144 @@ This way you "save" your output options
 
 class: inverse, middle, center
 
-# code chunks
+# Your turn! 
+
+--
+
+**Download the Rmd files if you haven't yet.**
+&lt;https://github.com/selcant/Rladies_Dammam_042021/blob/main/docs.zip&gt;
+
+--
+
+🧶 `test.Rmd` to html. 
+
+--
+
+Change theme and re-🧶!
+
+
+--
+
+Change output and re-🧶!
 
 ???
-Add more here! 
+Using what we learned so far. 
+
+---
+
+class: inverse, middle, center
+
+# Text in Rmarkdown
+
+Newest Rstudio comes with a visual editor!
+
+--
+
+Here is a markdown tutorial 👇  
+
+https://commonmark.org/help/tutorial/
+
+???
+Show it. 
+
+
+---
+
+class: inverse, middle, center
+
+# Code chunks
+
+--
+
+Include code.  
+
+--
+
+Add plots.
+
+--
+
+Add tables.
+
+--
+
+and more ...
+
+
+???
+what to do with code chunks.
+---
+class: top, left
+
+# Code chunks
+
+
+.pull-left[
+
+````
+```{r table, echo = TRUE, eval = FALSE }
+
+library(tidyverse)
+library(DT)
+library(palmerpenguins)
+
+
+# Making downloadable data tables
+# https://www.r-bloggers.com/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/
+create_dt &lt;- function(x){
+  DT::datatable(x,
+                extensions = 'Buttons',
+                rownames = FALSE, filter="top",
+                options = list(dom = 'Blfrtip',
+                               buttons = c('copy', 'csv', 'excel'),
+                               pageLength = 5, scrollX=T))
+}
+
+create_dt(penguins)
+
+```
+
+````
+]
+
+.pull-right[
+
+What is the fate of this chunk?
+
+
+What happens when you change `eval = TRUE`?
+
+
+]
+
+???
+evaluate = TRUE, it won't run when it is FALSE
+Tables you can search! -- DT package is very cool! Let's you share data easily. 
+
+---
+
+class: inverse, middle, center
+
+# Code chunks -&gt; Your turn! 
+
+Knit test.Rmd to html.
+
+--
+
+Change `eval = TRUE` and re-🧶!
+
+--
+
+Check the tabs, anything new?
+
+--
+
+How about your local directory, any new folders?
+
+???
+Tabs - plots will show up.
+This is a neat html trick that lets you organize things.
+cache - you can cache time consuming steps.
 
 ---
 

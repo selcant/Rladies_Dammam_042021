@@ -369,7 +369,17 @@ library(tidyverse)
 library(DT)
 library(palmerpenguins)
 
-source("functions.R")
+
+# Making downloadable data tables
+# https://www.r-bloggers.com/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/
+create_dt &lt;- function(x){
+  DT::datatable(x,
+                extensions = 'Buttons',
+                rownames = FALSE, filter="top",
+                options = list(dom = 'Blfrtip',
+                               buttons = c('copy', 'csv', 'excel'),
+                               pageLength = 5, scrollX=T))
+}
 
 create_dt(penguins)
 
@@ -386,13 +396,10 @@ What is the fate of this chunk?
 What happens when you change `eval = TRUE`?
 
 
-What is `source` doing here?
-
 ]
 
 ???
 evaluate = TRUE, it won't run when it is FALSE
-source -- running outside R scripts. Here we are getting external functions like create_dt
 Tables you can search! -- DT package is very cool! Let's you share data easily. 
 
 ---
@@ -416,7 +423,9 @@ Check the tabs, anything new?
 How about your local directory, any new folders?
 
 ???
-update the eval = TRUE + re-knit. 
+Tabs - plots will show up.
+This is a neat html trick that lets you organize things.
+cache - you can cache time consuming steps.
 
 ---
 
