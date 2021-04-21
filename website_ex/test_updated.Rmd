@@ -1,0 +1,109 @@
+---
+title: "R Markdown Example"
+author: "Selcan Aydin"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    code_download: TRUE
+    theme: flatly
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Changing themes
+
+You can update the 'look' of your html document by changing the `theme` option in the `yaml`. Look here for all the free bootswatch themes that are compatible with R markdown html document <https://bootswatch.com/3/>.
+
+## Including Tables
+
+You can also add tables using the `DT` package. Note that you need to change `eval = FALSE` to `eval = TRUE` to run this code chunk while the document is knitting.
+
+```{r table, echo = TRUE, eval = TRUE, warning = FALSE, message = FALSE}
+
+library(tidyverse)
+library(DT)
+library(palmerpenguins)
+
+
+# Making downloadable data tables
+# https://www.r-bloggers.com/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/
+create_dt <- function(x){
+  DT::datatable(x,
+                extensions = 'Buttons',
+                rownames = FALSE, filter="top",
+                options = list(dom = 'Blfrtip',
+                               buttons = c('copy', 'csv', 'excel'),
+                               pageLength = 5, scrollX=T))
+}
+
+create_dt(penguins)
+
+```
+
+## Getting fancy tabs {.tabset .tabset-fade .tabset-pills}
+
+Here is a neat trick to get tabs in your html document.
+
+### Tab 1
+
+```{r distribution, out.width= "75%", eval = TRUE, warning = FALSE, message = FALSE}
+
+# Histogram example: flipper length by species
+ggplot(data = penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
+  scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
+```
+
+### Tab 2
+
+```{r scatterplot, fig.width = 10, fig.width = 10, eval = TRUE, warning = FALSE, message = FALSE}
+# Scatterplot example 1: penguin flipper length versus body mass
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 2) +
+  scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
+
+```
+
+
+## Caching code chunks
+
+What if a step is taking too long and I don't want to re-run it every time I knit?
+
+```{r cache_example, cache = TRUE, dependson=penguins, eval = TRUE}
+
+mean_penguins <- summarize_if( penguins, is.numeric, mean, na.rm=TRUE ) %>% 
+  mutate_if( is.numeric, formatC, digits =2, format = "f")
+
+```
+
+
+```{r display_mean, eval = TRUE}
+create_dt(mean_penguins)
+```

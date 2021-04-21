@@ -1,0 +1,18 @@
+name: "my-website"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "R markdown example"
+      href: test.html
+    - text: "R markdown example updated"
+      href: test_updated.html
+  right:
+    - icon: fa-paper-plane
+      href: myemail@email.com
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
