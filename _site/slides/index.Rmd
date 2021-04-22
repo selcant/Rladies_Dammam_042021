@@ -280,6 +280,7 @@ Update your Rmd and re-knit!
 .pull-right[
 
 ```{r echo=FALSE}
+
 yml_empty() %>% 
   yml_author("Your name here") %>% 
   yml_title("Your title here") %>% 
@@ -288,7 +289,9 @@ yml_empty() %>%
              pdf_document()
              )  %>% 
   asis_yaml_output()
+
 ```
+
 ]
 
 ???
@@ -326,6 +329,60 @@ Change output and re-`r emo::ji("yarn")`!
 
 ???
 Using what we learned so far. 
+
+---
+class: middle, center
+
+# Extension output formats
+
+
+```{r echo=FALSE, out.width="32%"}
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/flexdashboard.png")
+
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png")
+
+knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png")
+```
+
+---
+class: middle, left
+
+```{r echo=FALSE}
+knitr::include_url("https://rstudio.github.io/distill/")
+```
+
+
+---
+class: middle
+
+.center[
+# Use an extension package
+]
+
+
+.pull-left[
+```{r echo = FALSE}
+yml_empty() %>% 
+  yml_author("Your name here") %>% 
+  yml_title("Your title here") %>% 
+  yml_output(distill::distill_article(),
+             bookdown::html_document2()) %>% 
+  asis_yaml_output()
+```
+]
+
+.pull-right[
+```{r echo = FALSE}
+yml_empty() %>% 
+  yml_author("Your name here") %>% 
+  yml_title("Your title here") %>% 
+  yml_output(distill::distill_article(toc = TRUE),
+             bookdown::html_document2(toc = TRUE, theme = "flatly", toc_float = TRUE)) %>% 
+  asis_yaml_output()
+```
+]
+
+
 
 ---
 
@@ -387,14 +444,13 @@ library(palmerpenguins)
 
 
 # Making downloadable data tables
-# https://www.r-bloggers.com/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/
 create_dt <- function(x){
   DT::datatable(x,
-                extensions = 'Buttons',
-                rownames = FALSE, filter="top",
-                options = list(dom = 'Blfrtip',
-                               buttons = c('copy', 'csv', 'excel'),
-                               pageLength = 5, scrollX=T))
+            extensions = 'Buttons',
+            rownames = FALSE, filter="top",
+            options = list(dom = 'Blfrtip',
+                buttons = c('copy', 'csv', 'excel'),
+                pageLength = 5, scrollX=T))
 }
 
 create_dt(penguins)
@@ -432,11 +488,11 @@ Change `eval = TRUE` and re-`r emo::ji("yarn")`!
 
 --
 
-Check the tabs, anything new?
+Check the tabs, anything new? `r emo::ji("chart_with_upwards_trend")` 
 
 --
 
-How about your local directory, any new folders?
+How about your local directory, any new folders? `r emo::ji("open_file_folder")`
 
 ???
 Tabs - plots will show up.
@@ -444,19 +500,209 @@ This is a neat html trick that lets you organize things.
 cache - you can cache time consuming steps.
 
 ---
+class: top, left
+
+# Chunk options for plots
+
+.pull-left[
+
+You can adjust: 
+
++ fig resolution
++ fig size
++ [fig "device"](https://r4ds.had.co.nz/graphics-for-communication.html#other-important-options)
+
+.footnote[https://yihui.name/knitr/options/#plots]
+]
+
+.pull-right[
+
+See also:
+
++ `fig.width`
++ `fig.height` 
++ `fig.asp`
+
+.footnote[https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing]
+]
+
+---
+
+# Cache chunks
+
+You can cache code chunks that need:
+
++ long time 
++ large resources 
+
+````
+```{r cache_example, cache =FALSE, eval = FALSE}`r ''`
+mean_penguins <- summarize_if( penguins, 
+                    is.numeric, mean, na.rm=TRUE )
+
+```
+````
+
+After changing `eval = TRUE` and re-knitting, do you see the `test_cache` folder?
+
+
+---
+
+class: inverse, top, left
+
+# Websites
+
+
++ Simple websites to share data, analysis using `rmarkdown()`. 
+
++ For personal websites check out the `distill()` package.  
+
++ There is also `blogdown()` and `bookdown()`available as more advanced options. 
+
+```{r echo=FALSE, out.width="15%"}
+
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/master/thumbs/rmarkdown.png?raw=true")
+
+knitr::include_graphics("https://github.com/rstudio/distill/blob/master/man/figures/logo.png?raw=true")
+
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/master/thumbs/blogdown.png?raw=true")
+
+knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/master/thumbs/bookdown.png?raw=true")
+
+
+
+```
+
+---
 
 class: inverse, middle, center
-# R Markdown website
+# Websites: R markdown example
+
+Download the example website here `r emo::ji("point_down")` 
+https://github.com/selcant/Rladies_Dammam_042021/blob/main/website_ex.zip
+
+
+--
+
+Click on website_ex.Rproj to start the Rstudio project.
+
+--
+
+Open _site.yml! 
+
+--
+
+Do you see "Build" next to Environment/History/Connections?
+
+If not, go to Project Options > Build tools and choose website.
+
+
+--
+
+Build website!
+
 
 ???
 
-add more here!
+build together + look through tabs.
+Change the author, add remove stuff. 
+
 ---
+class: inverse, middle, center
 
-# Resources and references
+# Resources.
+---
+class: middle, center, inverse
 
-**add text and link here**
+<span class="fa-stack fa-4x">
+  <i class="fa fa-circle fa-stack-2x" style="color: #fff;"></i>
+  <strong class="fa-stack-1x" style="color:#2f5275;">!</strong>
+</span> 
 
+
+# Cheatsheets!
+
+---
+class: middle
+
+.left-column[
+
+# `r emo::ji("pushpin")`
+
+]
+
+.right-column[
+
+_Help > Cheatsheets > RStudio IDE_
+
+```{r echo = FALSE, out.width = "50%", fig.link="https://www.rstudio.com/resources/cheatsheets/#ide"}
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/0dc0efccfaf638de8be4ce43e2bab8a91541d3d2/c4fdc/wp-content/uploads/2018/08/rstudio-ide.png")
+```
+]
+
+.footnote[https://www.rstudio.com/resources/cheatsheets/#ide]
+
+---
+class: middle
+
+.left-column[
+# `r emo::ji("pushpin")`
+]
+
+.right-column[
+_Help > Cheatsheets > R Markdown Cheat Sheet_
+
+```{r echo = FALSE, out.width="50%", fig.link="https://www.rstudio.com/resources/cheatsheets/#rmarkdown"}
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/65dffd1bdcaa0025006262164d98e8068e8b4387/c3895/wp-content/uploads/2018/08/rmarkdown-2.0.png")
+```
+]
+
+.footnote[https://www.rstudio.com/resources/cheatsheets/#rmarkdown]
+
+---
+class: middle
+
+.left-column[
+# `r emo::ji("pushpin")`
+]
+
+.right-column[
+_Help > Cheatsheets > R Markdown Reference Guide_
+
+```{r echo = FALSE, out.width = "40%", fig.link="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf"}
+knitr::include_graphics("https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference-guide.png")
+```
+
+]
+
+.footnote[https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf]
+
+---
+class: middle, center, inverse
+
+<span class="fa-stack fa-4x">
+  <i class="fa fa-circle fa-stack-2x" style="color: #fff;"></i>
+  <strong class="fa-stack-1x" style="color:#2f5275;">!</strong>
+</span> 
+
+
+# Book!
+
+---
+class: middle
+
+.left-column[
+# `r emo::ji("book")`
+]
+
+.right-column[
+
+```{r echo = FALSE, out.width = "40%", fig.link="https://bookdown.org/yihui/rmarkdown/"}
+knitr::include_graphics("https://bookdown.org/yihui/rmarkdown/images/cover.png")
+```
+]
+
+.footnote[https://bookdown.org/yihui/rmarkdown/]
 
 ---
 class: center, middle
@@ -468,3 +714,7 @@ Special thanks to Rstudio Education, Dr. Alison Presmanes Hill and Dr. Allison H
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
 The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+
+References:
+* https://rstd.io/rmd4cdc
+* https://rstudio-education.github.io/teaching-in-production/

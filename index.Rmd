@@ -64,7 +64,7 @@ I assume that you have heard of [R Markdown](https://rmarkdown.rstudio.com/) and
 Please make sure you have installed the packages below:
 
 ```{r eval=FALSE, echo=TRUE}
-install.packages(c("tidyverse", "DT", "palmerpenguins"))
+install.packages(c("tidyverse", "DT", "palmerpenguins", "distill"))
 ```
 
 \

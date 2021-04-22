@@ -4,7 +4,7 @@
     <title>Many faces of R Markdown: An introduction</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Selcan Aydin" />
-    <meta name="date" content="2021-04-21" />
+    <meta name="date" content="2021-04-22" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
@@ -129,7 +129,7 @@ class: inverse, middle, center
 
 --
 
-🌏 Easily share data, results and code. All together! 
+🌎 Easily share data, results and code. All together! 
 
 ???
 
@@ -273,6 +273,7 @@ output:
   pdf_document: default
 ---
 ```
+
 ]
 
 ???
@@ -310,6 +311,58 @@ Change output and re-🧶!
 
 ???
 Using what we learned so far. 
+
+---
+class: middle, center
+
+# Extension output formats
+
+
+&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/flexdashboard.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png" width="32%" /&gt;
+
+---
+class: middle, left
+
+&lt;iframe src="https://rstudio.github.io/distill/" width="504" height="400px"&gt;&lt;/iframe&gt;
+
+
+---
+class: middle
+
+.center[
+# Use an extension package
+]
+
+
+.pull-left[
+```yaml
+---
+author: Your name here
+title: Your title here
+output:
+  distill::distill_article: default
+  bookdown::html_document2: default
+---
+```
+]
+
+.pull-right[
+```yaml
+---
+author: Your name here
+title: Your title here
+output:
+  distill::distill_article:
+    toc: true
+  bookdown::html_document2:
+    toc: true
+    theme: flatly
+    toc_float: true
+---
+```
+]
+
+
 
 ---
 
@@ -371,14 +424,13 @@ library(palmerpenguins)
 
 
 # Making downloadable data tables
-# https://www.r-bloggers.com/vignette-downloadable-tables-in-rmarkdown-with-the-dt-package/
 create_dt &lt;- function(x){
   DT::datatable(x,
-                extensions = 'Buttons',
-                rownames = FALSE, filter="top",
-                options = list(dom = 'Blfrtip',
-                               buttons = c('copy', 'csv', 'excel'),
-                               pageLength = 5, scrollX=T))
+            extensions = 'Buttons',
+            rownames = FALSE, filter="top",
+            options = list(dom = 'Blfrtip',
+                buttons = c('copy', 'csv', 'excel'),
+                pageLength = 5, scrollX=T))
 }
 
 create_dt(penguins)
@@ -416,11 +468,11 @@ Change `eval = TRUE` and re-🧶!
 
 --
 
-Check the tabs, anything new?
+Check the tabs, anything new? 📈 
 
 --
 
-How about your local directory, any new folders?
+How about your local directory, any new folders? 📂
 
 ???
 Tabs - plots will show up.
@@ -428,19 +480,189 @@ This is a neat html trick that lets you organize things.
 cache - you can cache time consuming steps.
 
 ---
+class: top, left
+
+# Chunk options for plots
+
+.pull-left[
+
+You can adjust: 
+
++ fig resolution
++ fig size
++ [fig "device"](https://r4ds.had.co.nz/graphics-for-communication.html#other-important-options)
+
+.footnote[https://yihui.name/knitr/options/#plots]
+]
+
+.pull-right[
+
+See also:
+
++ `fig.width`
++ `fig.height` 
++ `fig.asp`
+
+.footnote[https://r4ds.had.co.nz/graphics-for-communication.html#figure-sizing]
+]
+
+---
+
+# Cache chunks
+
+You can cache code chunks that need:
+
++ long time 
++ large resources 
+
+````
+```{r cache_example, cache =FALSE, eval = FALSE}
+mean_penguins &lt;- summarize_if( penguins, 
+                    is.numeric, mean, na.rm=TRUE )
+
+```
+````
+
+After changing `eval = TRUE` and re-knitting, do you see the `test_cache` folder?
+
+
+---
+
+class: inverse, top, left
+
+# Websites
+
+
++ Simple websites to share data, analysis using `rmarkdown()`. 
+
++ For personal websites check out the `distill()` package.  
+
++ There is also `blogdown()` and `bookdown()`available as more advanced options. 
+
+&lt;img src="https://github.com/rstudio/hex-stickers/blob/master/thumbs/rmarkdown.png?raw=true" width="15%" /&gt;&lt;img src="https://github.com/rstudio/distill/blob/master/man/figures/logo.png?raw=true" width="15%" /&gt;&lt;img src="https://github.com/rstudio/hex-stickers/blob/master/thumbs/blogdown.png?raw=true" width="15%" /&gt;&lt;img src="https://github.com/rstudio/hex-stickers/blob/master/thumbs/bookdown.png?raw=true" width="15%" /&gt;
+
+---
 
 class: inverse, middle, center
-# R Markdown website
+# Websites: R markdown example
+
+Download the example website here 👇 
+https://github.com/selcant/Rladies_Dammam_042021/blob/main/website_ex.zip
+
+
+--
+
+Click on website_ex.Rproj to start the Rstudio project.
+
+--
+
+Open _site.yml! 
+
+--
+
+Do you see "Build" next to Environment/History/Connections?
+
+If not, go to Project Options &gt; Build tools and choose website.
+
+
+--
+
+Build website!
+
 
 ???
 
-add more here!
+build together + look through tabs.
+Change the author, add remove stuff. 
+
 ---
+class: inverse, middle, center
 
-# Resources and references
+# Resources.
+---
+class: middle, center, inverse
 
-**add text and link here**
+&lt;span class="fa-stack fa-4x"&gt;
+  &lt;i class="fa fa-circle fa-stack-2x" style="color: #fff;"&gt;&lt;/i&gt;
+  &lt;strong class="fa-stack-1x" style="color:#2f5275;"&gt;!&lt;/strong&gt;
+&lt;/span&gt; 
 
+
+# Cheatsheets!
+
+---
+class: middle
+
+.left-column[
+
+# 📌
+
+]
+
+.right-column[
+
+_Help &gt; Cheatsheets &gt; RStudio IDE_
+
+&lt;a href="https://www.rstudio.com/resources/cheatsheets/#ide" target="_blank"&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/0dc0efccfaf638de8be4ce43e2bab8a91541d3d2/c4fdc/wp-content/uploads/2018/08/rstudio-ide.png" width="50%" /&gt;&lt;/a&gt;
+]
+
+.footnote[https://www.rstudio.com/resources/cheatsheets/#ide]
+
+---
+class: middle
+
+.left-column[
+# 📌
+]
+
+.right-column[
+_Help &gt; Cheatsheets &gt; R Markdown Cheat Sheet_
+
+&lt;a href="https://www.rstudio.com/resources/cheatsheets/#rmarkdown" target="_blank"&gt;&lt;img src="https://d33wubrfki0l68.cloudfront.net/65dffd1bdcaa0025006262164d98e8068e8b4387/c3895/wp-content/uploads/2018/08/rmarkdown-2.0.png" width="50%" /&gt;&lt;/a&gt;
+]
+
+.footnote[https://www.rstudio.com/resources/cheatsheets/#rmarkdown]
+
+---
+class: middle
+
+.left-column[
+# 📌
+]
+
+.right-column[
+_Help &gt; Cheatsheets &gt; R Markdown Reference Guide_
+
+&lt;a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf" target="_blank"&gt;&lt;img src="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference-guide.png" width="40%" /&gt;&lt;/a&gt;
+
+]
+
+.footnote[https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf]
+
+---
+class: middle, center, inverse
+
+&lt;span class="fa-stack fa-4x"&gt;
+  &lt;i class="fa fa-circle fa-stack-2x" style="color: #fff;"&gt;&lt;/i&gt;
+  &lt;strong class="fa-stack-1x" style="color:#2f5275;"&gt;!&lt;/strong&gt;
+&lt;/span&gt; 
+
+
+# Book!
+
+---
+class: middle
+
+.left-column[
+# 📖
+]
+
+.right-column[
+
+&lt;a href="https://bookdown.org/yihui/rmarkdown/" target="_blank"&gt;&lt;img src="https://bookdown.org/yihui/rmarkdown/images/cover.png" width="40%" /&gt;&lt;/a&gt;
+]
+
+.footnote[https://bookdown.org/yihui/rmarkdown/]
 
 ---
 class: center, middle
@@ -452,6 +674,10 @@ Special thanks to Rstudio Education, Dr. Alison Presmanes Hill and Dr. Allison H
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
 The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+
+References:
+* https://rstd.io/rmd4cdc
+* https://rstudio-education.github.io/teaching-in-production/
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
