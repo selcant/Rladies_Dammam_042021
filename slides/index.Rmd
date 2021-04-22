@@ -613,14 +613,14 @@ class: inverse, middle, left
 
 # Publish your website! `r emo::ji("globe_with_meridians")`
 
+
 1. You can publish your website using netlify! Make a free account here: <https://www.netlify.com/> or login with other credentials.
 
--- 
+--
 
 1. Find the `r emo::ji("file_folder")` `_site` folder you just created and drag & drop into netlify! 
 
 --
-
 
 1. Voila! Your website is live! `r emo::ji("sunglasses")`
 
@@ -724,7 +724,7 @@ knitr::include_graphics("https://bookdown.org/yihui/rmarkdown/images/cover.png")
 
 ---
 
-class: left, middle
+class: left, middle, inverse
 
 ## Thank you!
 
