@@ -1,8 +1,0 @@
----
-title: "My website"
----
-    
-
-Hi, this is my website. 
-
-  
