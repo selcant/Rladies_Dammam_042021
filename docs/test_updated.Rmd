@@ -2,11 +2,21 @@
 title: "R Markdown Example"
 author: "Selcan Aydin"
 date: "`r Sys.Date()`"
-output: 
+output:
+  bookdown::html_document2:
+    toc: yes
+    theme: flatly
+    toc_float: yes
+    code_download: yes
+    code_folding: hide
+  distill::distill_article:
+    toc: yes
+    code_download: yes
+    code_folding: hide
   html_document:
-    toc: TRUE
-    toc_float: TRUE
-    code_download: TRUE
+    toc: yes
+    toc_float: yes
+    code_download: yes
     theme: flatly
     code_folding: hide
 ---
@@ -96,7 +106,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 What if a step is taking too long and I don't want to re-run it every time I knit?
 
-```{r cache_example, cache = TRUE, dependson=penguins, eval = TRUE}
+```{r cache_example, cache = TRUE, dependson = penguins, eval = TRUE}
 
 mean_penguins <- summarize_if( penguins, is.numeric, mean, na.rm=TRUE ) %>% 
   mutate_if( is.numeric, formatC, digits =2, format = "f")

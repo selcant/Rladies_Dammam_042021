@@ -91,7 +91,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 What if a step is taking too long and I don't want to re-run it every time I knit?
 
-```{r cache_example, cache =TRUE, eval = FALSE}
+```{r cache_example, cache = FALSE, eval = FALSE}
 
 mean_penguins <- summarize_if( penguins, is.numeric, mean, na.rm=TRUE )
 
