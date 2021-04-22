@@ -12,7 +12,7 @@
       ],
       "date": "`r Sys.Date()`",
       "contents": "\n\nContents\nWelcome\nPrework\nLinks\nAcknowledgments\n\n\n\n\nWelcome\nThis website contains the materials for an invited talk for R-ladies Dammam by Dr. Selcan Aydin.\nYou can download the .Rmd files needed for hands-on exercises here: https://github.com/selcant/Rladies_Dammam_042021/blob/main/_material.zip\n\n\n\n\n\n\nfitvids('.shareagain', {players: 'iframe'});\n\n\nPrework\nI assume that you have heard of R Markdown and maybe gave knitting a try. If not, no worries you will get to try with us! This will be a very hands-on session where together we will:\nKnit an Rmarkdown file to html. Make it prettier!\nBuild a website using Rmarkdown.\nPlease make sure you have installed the packages below:\n\n\ninstall.packages(c(\"tidyverse\", \"DT\", \"palmerpenguins\", \"distill\", \"bookdown\"))\n\n\n\n\nLinks\nLink to this website: https://many-faces.netlify.app/\nSlides\nAcknowledgments\nThis website is made with the distill package and a custom theme by Alison Hill & Desirée De Leon.\n\n\n\n",
-      "last_modified": "2021-04-22T10:54:34-04:00"
+      "last_modified": "2021-04-22T15:05:03-04:00"
     }
   ],
   "collections": []

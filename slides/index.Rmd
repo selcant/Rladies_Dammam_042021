@@ -250,8 +250,9 @@ yml_empty() %>%
   yml_title("Your title here") %>% 
   yml_output(html_document(toc = TRUE,
                            toc_float = TRUE,
-                           theme = "darkly",
-                           code_folding = "hide")) %>% 
+                           theme = "flatly",
+                           code_folding = "hide",
+                           code_download = TRUE)) %>% 
   asis_yaml_output()
 ```
 
@@ -284,7 +285,11 @@ Update your Rmd and re-knit!
 yml_empty() %>% 
   yml_author("Your name here") %>% 
   yml_title("Your title here") %>% 
-  yml_output(html_document(toc = TRUE, toc_float = TRUE, theme = "flatly"), 
+  yml_output(html_document(toc = TRUE,
+                           toc_float = TRUE,
+                           theme = "flatly",
+                           code_folding = "hide",
+                           code_download = TRUE), 
              word_document(), 
              pdf_document()
              )  %>% 
