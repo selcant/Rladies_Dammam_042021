@@ -48,7 +48,7 @@ You can download the .Rmd files needed for hands-on exercises here: <https://git
 xaringanExtra::use_share_again()
 ```
 
-```{r embed-xaringan, echo=FALSE, fig.cap="[Slides](slides/index.html)", eval=FALSE}
+```{r embed-xaringan, echo=FALSE, fig.cap="[Slides](slides/index.html)", eval=TRUE}
 xaringanExtra::embed_xaringan(url = "slides/index.html", ratio = "16:9")
 ```
 \
@@ -59,12 +59,12 @@ I assume that you have heard of [R Markdown](https://rmarkdown.rstudio.com/) and
 
 + Knit an Rmarkdown file to html. Make it prettier!
 
-+ Build a website using Rmarkdown. Share it with the world?
++ Build a website using Rmarkdown. 
 
 Please make sure you have installed the packages below:
 
 ```{r eval=FALSE, echo=TRUE}
-install.packages(c("tidyverse", "DT", "palmerpenguins", "distill"))
+install.packages(c("tidyverse", "DT", "palmerpenguins", "distill", "bookdown"))
 ```
 
 \

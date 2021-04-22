@@ -2059,6 +2059,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/shareon-1.4.1/shareon.min.js"></script>
   <link href="site_libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
   <script src="site_libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+  <script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2335,7 +2336,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </div>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="slides/index.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
 </div>
 <p><br />
 </p>
@@ -2343,12 +2347,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>I assume that you have heard of <a href="https://rmarkdown.rstudio.com/">R Markdown</a> and maybe gave knitting a try. If not, no worries you will get to try with us! This will be a very hands-on session where together we will:</p>
 <ul>
 <li><p>Knit an Rmarkdown file to html. Make it prettier!</p></li>
-<li><p>Build a website using Rmarkdown. Share it with the world?</p></li>
+<li><p>Build a website using Rmarkdown.</p></li>
 </ul>
 <p>Please make sure you have installed the packages below:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"tidyverse"</span>, <span class='st'>"DT"</span>, <span class='st'>"palmerpenguins"</span>, <span class='st'>"distill"</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"tidyverse"</span>, <span class='st'>"DT"</span>, <span class='st'>"palmerpenguins"</span>, <span class='st'>"distill"</span>, <span class='st'>"bookdown"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>

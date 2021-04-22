@@ -129,7 +129,7 @@ class: inverse, middle, center
 
 --
 
-🌎 Easily share data, results and code. All together! 
+🌏 Easily share data, results and code. All together! 
 
 ???
 
@@ -294,7 +294,7 @@ class: inverse, middle, center
 --
 
 **Download the Rmd files if you haven't yet.**
-&lt;https://github.com/selcant/Rladies_Dammam_042021/blob/main/docs.zip&gt;
+&lt;https://github.com/selcant/Rladies_Dammam_042021/blob/main/_materials.zip&gt;
 
 --
 
@@ -321,9 +321,11 @@ class: middle, center
 &lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/flexdashboard.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/bookdown.png" width="32%" /&gt;&lt;img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/xaringan.png" width="32%" /&gt;
 
 ---
-class: middle, left
+class: middle, center
 
-&lt;iframe src="https://rstudio.github.io/distill/" width="504" height="400px"&gt;&lt;/iframe&gt;
+# Distill()
+
+&lt;iframe src="https://rstudio.github.io/distill/" width="90%" height="400px"&gt;&lt;/iframe&gt;
 
 
 ---
@@ -455,31 +457,6 @@ evaluate = TRUE, it won't run when it is FALSE
 Tables you can search! -- DT package is very cool! Let's you share data easily. 
 
 ---
-
-class: inverse, middle, center
-
-# Code chunks -&gt; Your turn! 
-
-Knit test.Rmd to html.
-
---
-
-Change `eval = TRUE` and re-🧶!
-
---
-
-Check the tabs, anything new? 📈 
-
---
-
-How about your local directory, any new folders? 📂
-
-???
-Tabs - plots will show up.
-This is a neat html trick that lets you organize things.
-cache - you can cache time consuming steps.
-
----
 class: top, left
 
 # Chunk options for plots
@@ -523,8 +500,33 @@ mean_penguins &lt;- summarize_if( penguins,
 ```
 ````
 
-After changing `eval = TRUE` and re-knitting, do you see the `test_cache` folder?
+After changing `eval = TRUE` and re-knitting, you should see a `*_cache` folder in your working directory.
 
+
+---
+
+class: inverse, middle, center
+
+# Your turn! 
+
+Knit test.Rmd to html.
+
+--
+
+Change `eval = TRUE` and re-🧶!
+
+--
+
+Check the tabs, anything new? 📈 
+
+--
+
+How about your local directory, any new folders? 📂
+
+???
+Tabs - plots will show up.
+This is a neat html trick that lets you organize things.
+cache - you can cache time consuming steps.
 
 ---
 
@@ -544,30 +546,29 @@ class: inverse, top, left
 ---
 
 class: inverse, middle, center
-# Websites: R markdown example
+
+# Your turn! 
 
 Download the example website here 👇 
-https://github.com/selcant/Rladies_Dammam_042021/blob/main/website_ex.zip
+&lt;https://github.com/selcant/Rladies_Dammam_042021/blob/main/_materials.zip&gt;
 
 
 --
 
-Click on website_ex.Rproj to start the Rstudio project.
+➡️  Click on website_ex.Rproj to start the Rstudio project.
 
 --
 
-Open _site.yml! 
+➡️  Open _site.yml! 
 
 --
 
-Do you see "Build" next to Environment/History/Connections?
-
-If not, go to Project Options &gt; Build tools and choose website.
+➡️  Do you see "Build" next to Environment/History/Connections? If not, go to Project Options &gt; Build tools and choose website.
 
 
 --
 
-Build website!
+➡️  Build website!
 
 
 ???
@@ -576,9 +577,25 @@ build together + look through tabs.
 Change the author, add remove stuff. 
 
 ---
+class: inverse, middle, left
+
+# Publish your website! 🌐
+
+1. You can publish your website using netlify! Make a free account here: &lt;https://www.netlify.com/&gt; or login with other credentials.
+
+-- 
+
+1. Find the 📁 `_site` folder you just created and drag &amp; drop into netlify! 
+
+--
+
+
+1. Voila! Your website is live! 😎
+
+---
 class: inverse, middle, center
 
-# Resources.
+# Resources...
 ---
 class: middle, center, inverse
 
@@ -664,20 +681,25 @@ class: middle
 
 .footnote[https://bookdown.org/yihui/rmarkdown/]
 
+
 ---
-class: center, middle
 
-# Thank you!
+class: left, middle
 
-Special thanks to Rstudio Education, Dr. Alison Presmanes Hill and Dr. Allison Horst for making all of their teaching/talk materials available. I benefited from them greatly! 
+## Thank you!
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
++ Special thanks to Rstudio Education, Dr. Alison Presmanes Hill and Dr. Allison Horst for making all of their teaching/talk materials available. I benefited from them greatly! 
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
++ Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
-References:
-* https://rstd.io/rmd4cdc
-* https://rstudio-education.github.io/teaching-in-production/
++ The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+
+## References
++ https://rstd.io/rmd4cdc
++ https://rstudio-education.github.io/teaching-in-production/
+
+---
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

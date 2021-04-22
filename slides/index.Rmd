@@ -312,7 +312,7 @@ class: inverse, middle, center
 --
 
 **Download the Rmd files if you haven't yet.**
-<https://github.com/selcant/Rladies_Dammam_042021/blob/main/docs.zip>
+<https://github.com/selcant/Rladies_Dammam_042021/blob/main/_materials.zip>
 
 --
 
@@ -345,9 +345,11 @@ knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/
 ```
 
 ---
-class: middle, left
+class: middle, center
 
-```{r echo=FALSE}
+# Distill()
+
+```{r echo=FALSE, out.width="90%"}
 knitr::include_url("https://rstudio.github.io/distill/")
 ```
 
@@ -475,31 +477,6 @@ evaluate = TRUE, it won't run when it is FALSE
 Tables you can search! -- DT package is very cool! Let's you share data easily. 
 
 ---
-
-class: inverse, middle, center
-
-# Code chunks -> Your turn! 
-
-Knit test.Rmd to html.
-
---
-
-Change `eval = TRUE` and re-`r emo::ji("yarn")`!
-
---
-
-Check the tabs, anything new? `r emo::ji("chart_with_upwards_trend")` 
-
---
-
-How about your local directory, any new folders? `r emo::ji("open_file_folder")`
-
-???
-Tabs - plots will show up.
-This is a neat html trick that lets you organize things.
-cache - you can cache time consuming steps.
-
----
 class: top, left
 
 # Chunk options for plots
@@ -543,8 +520,33 @@ mean_penguins <- summarize_if( penguins,
 ```
 ````
 
-After changing `eval = TRUE` and re-knitting, do you see the `test_cache` folder?
+After changing `eval = TRUE` and re-knitting, you should see a `*_cache` folder in your working directory.
 
+
+---
+
+class: inverse, middle, center
+
+# Your turn! 
+
+Knit test.Rmd to html.
+
+--
+
+Change `eval = TRUE` and re-`r emo::ji("yarn")`!
+
+--
+
+Check the tabs, anything new? `r emo::ji("chart_with_upwards_trend")` 
+
+--
+
+How about your local directory, any new folders? `r emo::ji("open_file_folder")`
+
+???
+Tabs - plots will show up.
+This is a neat html trick that lets you organize things.
+cache - you can cache time consuming steps.
 
 ---
 
@@ -576,30 +578,29 @@ knitr::include_graphics("https://github.com/rstudio/hex-stickers/blob/master/thu
 ---
 
 class: inverse, middle, center
-# Websites: R markdown example
+
+# Your turn! 
 
 Download the example website here `r emo::ji("point_down")` 
-https://github.com/selcant/Rladies_Dammam_042021/blob/main/website_ex.zip
+<https://github.com/selcant/Rladies_Dammam_042021/blob/main/_materials.zip>
 
 
 --
 
-Click on website_ex.Rproj to start the Rstudio project.
+`r emo::ji("arrow_right")`  Click on website_ex.Rproj to start the Rstudio project.
 
 --
 
-Open _site.yml! 
+`r emo::ji("arrow_right")`  Open _site.yml! 
 
 --
 
-Do you see "Build" next to Environment/History/Connections?
-
-If not, go to Project Options > Build tools and choose website.
+`r emo::ji("arrow_right")`  Do you see "Build" next to Environment/History/Connections? If not, go to Project Options > Build tools and choose website.
 
 
 --
 
-Build website!
+`r emo::ji("arrow_right")`  Build website!
 
 
 ???
@@ -608,9 +609,25 @@ build together + look through tabs.
 Change the author, add remove stuff. 
 
 ---
+class: inverse, middle, left
+
+# Publish your website! `r emo::ji("globe_with_meridians")`
+
+1. You can publish your website using netlify! Make a free account here: <https://www.netlify.com/> or login with other credentials.
+
+-- 
+
+1. Find the `r emo::ji("file_folder")` `_site` folder you just created and drag & drop into netlify! 
+
+--
+
+
+1. Voila! Your website is live! `r emo::ji("sunglasses")`
+
+---
 class: inverse, middle, center
 
-# Resources.
+# Resources...
 ---
 class: middle, center, inverse
 
@@ -704,17 +721,22 @@ knitr::include_graphics("https://bookdown.org/yihui/rmarkdown/images/cover.png")
 
 .footnote[https://bookdown.org/yihui/rmarkdown/]
 
+
 ---
-class: center, middle
 
-# Thank you!
+class: left, middle
 
-Special thanks to Rstudio Education, Dr. Alison Presmanes Hill and Dr. Allison Horst for making all of their teaching/talk materials available. I benefited from them greatly! 
+## Thank you!
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
++ Special thanks to Rstudio Education, Dr. Alison Presmanes Hill and Dr. Allison Horst for making all of their teaching/talk materials available. I benefited from them greatly! 
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
++ Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
-References:
-* https://rstd.io/rmd4cdc
-* https://rstudio-education.github.io/teaching-in-production/
++ The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+
+## References
++ https://rstd.io/rmd4cdc
++ https://rstudio-education.github.io/teaching-in-production/
+
+---
+
