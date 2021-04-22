@@ -312,7 +312,7 @@ class: inverse, middle, center
 --
 
 **Download the Rmd files if you haven't yet.**
-<https://github.com/selcant/Rladies_Dammam_042021/blob/main/_materials.zip>
+<https://github.com/selcant/Rladies_Dammam_042021/blob/main/_material.zip>
 
 --
 
@@ -582,7 +582,7 @@ class: inverse, middle, center
 # Your turn! 
 
 Download the example website here `r emo::ji("point_down")` 
-<https://github.com/selcant/Rladies_Dammam_042021/blob/main/_materials.zip>
+<https://github.com/selcant/Rladies_Dammam_042021/blob/main/_material.zip>
 
 
 --
