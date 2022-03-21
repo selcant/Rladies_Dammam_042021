@@ -1,4 +1,3 @@
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fc33b987-b580-4145-afc9-7d8427bf77f1/deploy-status)](https://app.netlify.com/sites/many-faces/deploys)
 
